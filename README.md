@@ -25,4 +25,4 @@ Wanderlust Node Backend
   password: is a string (required)  
   name: a string (required)  
   email: a string (optional)  
-
+ test
