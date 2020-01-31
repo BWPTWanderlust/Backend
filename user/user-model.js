@@ -13,3 +13,9 @@ async function add(user){
     .insert(user)
   return(findById(id))
 }
+
+async function findById(id){
+    return db("users")
+    .where({id})
+    .first("id", "username")
+}
