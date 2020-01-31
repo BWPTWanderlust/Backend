@@ -6,7 +6,6 @@ exports.up = async function(knex) {
       user.string("username",255).notNullable()
       user.boolean("org").defaultTo(false)
       user.string("password",255).notNullable()
-      user.string("bio")
       user.string("email")
   })
   await knex.schema.createTable("experience", (exp) => {
@@ -19,6 +18,21 @@ exports.up = async function(knex) {
     exp.string("type").notNullable()
     exp.string("imgurl")
     exp.string("duration").notNullable()
+
+})
+await knex.schema.createTable("bio", (table) => {
+    table.increments("id")
+    table.string("bio").notNullable()
+    table.int("user_id").notNullable() 
+
+})
+await knex.schema.createTable("organizer", (org) => {
+    org.increments("id")
+    org.string("name",255).notNullable()
+    org.string("username",255).notNullable()
+    org.boolean("org").defaultTo(false)
+    org.string("password",255).notNullable()
+    org.string("email")
 
 })
 };
