@@ -4,9 +4,11 @@ const secrets = require("../config/secrets")
 const Users = require("../user/user-model")
 const bcrypt = require("bcryptjs")
 
-router.post('./register', (req, res) => {
+router.post('/register/user', (req, res) => {
     Users.add(req.body)
+    
     .then(response => {
+        console.log(response)
         res.status(201).json(response)
     })
     .catch( err => {
