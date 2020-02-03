@@ -9,11 +9,11 @@ Wanderlust Node Backend
  ## User Registration
 
  | HTTP | Endpoint                |
- | ------------------------------ |
+ | -----|------------------------ |
  | POST | /api/auth/register/user |
 
  | Fields      |          Data            |
- |--------------------------------------- |
+ |-------------|------------------------- |
  | username    | unique string (required) |
  | password    | string (required)        |
  | name        | string (required)        |
@@ -23,11 +23,11 @@ Wanderlust Node Backend
 ## Organizer Registration  
 
  | HTTP | Endpoint                |
- | ------------------------------ |
+ | -----|------------------------ |
  | POST | /api/auth/register/org |
 
  | Fields      |          Data            |
- |--------------------------------------- |
+ |-------------|------------------------- |
  | username    | unique string (required) |
  | password    | string (required)        |
  | name        | string (required)        |
@@ -44,11 +44,11 @@ Wanderlust Node Backend
   ## User Login
 
  | HTTP | Endpoint                |
- | ------------------------------ |
- | POST | /api/auth/login/user |
+ | -----|------------------------ |
+ | POST | /api/auth/login/user    |
 
  | Fields      |          Data            |
- |--------------------------------------- |
+ |-------------|------------------------- |
  | username    | unique string (required) |
  | password    | string (required)        |
 
@@ -57,11 +57,11 @@ Wanderlust Node Backend
   ## Organizer Login
 
  | HTTP | Endpoint                |
- | ------------------------------ |
+ | -----|------------------------ |
  | POST | /api/auth/login/org |
 
  | Fields      |          Data            |
- |--------------------------------------- |
+ |-------------|------------------------- |
  | username    | unique string (required) |
  | password    | string (required)        |
 
