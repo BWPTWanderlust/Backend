@@ -5,27 +5,64 @@ Wanderlust Node Backend
 # Endpoints
 ----------------------------
 
-## User Registration
 
- POST /api/auth/register/user  
-  --requried fields
+ ## User Registration
 
-  username: is a unique string (required)  
-  password: is a string (required)  
-  name: a string (required)  
-  email: a string (optional)  
+ | HTTP | Endpoint                |
+ | ------------------------------ |
+ | POST | /api/auth/register/user |
 
-## Org Registration  
+ | Fields      |          Data            |
+ |--------------------------------------- |
+ | username    | unique string (required) |
+ | password    | string (required)        |
+ | name        | string (required)        |
+ | email       | string (optional)        |
 
 
- POST /api/auth/register/org  
-  --requried fields
+## Organizer Registration  
 
-  username: is a unique string (required)  
-  password: is a string (required)  
-  name: a string (required)  
-  email: a string (optional)  
+ | HTTP | Endpoint                |
+ | ------------------------------ |
+ | POST | /api/auth/register/org |
+
+ | Fields      |          Data            |
+ |--------------------------------------- |
+ | username    | unique string (required) |
+ | password    | string (required)        |
+ | name        | string (required)        |
+ | email       | string (optional)        |
+
+
+ user and org registration both return  
+ id of user/org  
+ username of user/org  
+ org boolean equal to 1 if an organizer or 
+ 0 if a user 
+
+
+  ## User Login
+
+ | HTTP | Endpoint                |
+ | ------------------------------ |
+ | POST | /api/auth/login/user |
+
+ | Fields      |          Data            |
+ |--------------------------------------- |
+ | username    | unique string (required) |
+ | password    | string (required)        |
+
  
- | Endpoint  | HTTP |
- | --------  | ---- |
- | /api/auth | POST |
+
+  ## Organizer Login
+
+ | HTTP | Endpoint                |
+ | ------------------------------ |
+ | POST | /api/auth/login/org |
+
+ | Fields      |          Data            |
+ |--------------------------------------- |
+ | username    | unique string (required) |
+ | password    | string (required)        |
+
+ 
