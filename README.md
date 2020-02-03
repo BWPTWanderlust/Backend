@@ -69,3 +69,11 @@ Wanderlust Node Backend
 Both user and organizer login returns
 a Json message containing the message "User {username} Logged in"
 along with a token
+
+  ## Get User information
+
+ | HTTP | Endpoint                |
+ | -----|------------------------ |
+ | Get  | /api/user/:id |
+ 
+ sending get request with the user id in url returns all users information
