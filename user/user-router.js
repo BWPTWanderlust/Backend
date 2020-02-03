@@ -6,4 +6,8 @@ router.get('/',(req,res) => {
         message: "welcome to this endpoint. Its working"
     })
 })
+
+
+
+
 module.exports = router;
