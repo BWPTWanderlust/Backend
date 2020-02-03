@@ -13,5 +13,7 @@ server.use(express.json())
 
 
 server.use('/api/auth', authRouter)
-server.use('/api/user', auth, userRouter)
+// server.use('/api/user', auth, userRouter)
+
+server.use('/api/user',userRouter)
 module.exports = server;

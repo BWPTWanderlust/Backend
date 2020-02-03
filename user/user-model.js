@@ -5,6 +5,7 @@ module.exports = {
     add,
     findById,
     findBy,
+    getUserInfo
 }
 
 async function add(user){
@@ -24,4 +25,9 @@ function findBy(filter){
     return db("users")
     .where(filter)
     .select("id", "username", "password")
+}
+function getUserInfo(id){
+    return db("users")
+    .where({id})
+    .first("id","username","name","email","bio",)
 }
