@@ -9,21 +9,8 @@ exports.up = async function(knex) {
       user.string("email")
       user.string("bio")
   })
-  await knex.schema.createTable("experience", (exp) => {
-    exp.increments("id")
-    exp.string("location").notNullable()
-    exp.string("description").notNullable()
-    exp.float("lat")
-    exp.float("long")
-    exp.boolean("private").defaultTo(false)
-    exp.string("type").notNullable()
-    exp.string("imgurl")
-    exp.string("duration").notNullable()
-    exp.string("organizer_id").notNullable().references('id').inTable('organizer').onUpdate('cascade').onDelete('cascade')
-    
-})
 
-await knex.schema.createTable("organizer", (org) => {
+  await knex.schema.createTable("organizer", (org) => {
     org.increments("id")
     org.string("name",255).notNullable()
     org.string("username",255).notNullable()
@@ -33,8 +20,30 @@ await knex.schema.createTable("organizer", (org) => {
     org.string("bio")
 
 })
+  await knex.schema.createTable("experience", (exp) => {
+    exp.increments("id")
+    exp.integer('organizer_id').unsigned().notNullable().references('id').inTable("organizer").onUpdate('CASCADE').onDelete('CASCADE')
+    exp.string("location").notNullable()
+    exp.string("description").notNullable()
+    exp.float("lat")
+    exp.float("long")
+    exp.date("date")
+    exp.boolean("private").defaultTo(false)
+    exp.string("type").notNullable()
+    exp.string("imgurl")
+    exp.string("duration").notNullable()
+    exp.string("title").notNullable()
+    
+})
+
+
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTableIfExists('users')
+  return knex.schema
+  
+  .dropTableIfExists('experience')
+.dropTableIfExists('organizer')
+.dropTableIfExists('users')
+
 };
