@@ -7,18 +7,16 @@ module.exports = {
     getAllExps
 }
 
-async function add(user){
-    user.password = await bcrypt.hash(user.password,10)
-    const [id] = await db("users")
-    .insert(user)
-    console.log(id)
-  return  findById(id)
+async function add(exp,organizer_id){
+    console.log(exp,organizer_id)
+    return db("experience")
+    .insert({...exp, organizer_id})
 }
 
 async function findById(id){
     return db("exps")
     .where({id})
-    .first("id", "username","name")
+    .first("id")
 }
 function findBy(filter){
     return db("exps")
