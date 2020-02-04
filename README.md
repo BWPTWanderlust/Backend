@@ -1,6 +1,9 @@
 # Backend
 Wanderlust Node Backend
 
+Backend url
+## https://bewanderlust.herokuapp.com
+
 
 # Endpoints
 ----------------------------
@@ -77,3 +80,28 @@ along with a token
  | Get  | /api/user/:id |
  
  sending get request with the user id in url returns all users information
+
+ ## Get all Experiences
+
+| HTTP | Endpoint                |
+ | -----|------------------------ |
+ | Get  | /api/exps |
+
+ ## Post New Experience for an Organizer
+
+| HTTP | Endpoint                |
+ | -----|------------------------ |
+ | POST  | api/exps/org/:id |
+ |-------|---------------------------------|
+  | Fields      |          Data            |
+ |-------------|------------------------- |
+ | location    | string (required) |
+ | lat    | float (optional)        |
+ | long        | float (optional)        |
+ | date       | date (optional)        |
+ | description | string (required)
+ | private     | boolean (defaults to false)
+ | type        | string (required)
+ | imgurl      | string (optional)
+ | duration    | string (required)
+ | title       | string (required)
