@@ -72,6 +72,19 @@ Both user and organizer login returns
 a Json message containing the message "User {username} Logged in"
 along with a token
 
+ ## Get all Organizers
+
+ | HTTP | Endpoint                |
+ | -----|------------------------ |
+ | Get  | /api/org/ |
+
+  ## Get all Users
+
+ | HTTP | Endpoint                |
+ | -----|------------------------ |
+ | Get  | /api/user/ |
+ 
+ 
   ## Get User information
 
  | HTTP | Endpoint                |

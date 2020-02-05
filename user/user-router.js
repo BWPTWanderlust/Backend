@@ -10,12 +10,27 @@ router.get('/:id',(req,res) => {
     })
     .catch(err => {
         console.log(err)
-        res.status(500).json({
+        res.status(400).json({
             message: "There was an error getting user info"
         })
     })
 })
 
+
+router.get('/',(req,res) => {
+    console.log(req.params)
+
+    userModel.getAllUsers()
+    .then(info => {
+        res.status(200).json(info)
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(400).json({
+            message: "There was an error getting user info"
+        })
+    })
+})
 
 
 

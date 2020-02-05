@@ -5,6 +5,7 @@ module.exports = {
     add,
     findById,
     findBy,
+    getAllOrgs
 }
 
 async function add(org){
@@ -25,4 +26,8 @@ function findBy(filter){
     return db("organizer")
     .where(filter)
     .select("id", "username", "password")
+}
+function getAllOrgs(){
+    return db("organizer")
+    .select("id","username","name","email","bio",)
 }

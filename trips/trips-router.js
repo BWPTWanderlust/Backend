@@ -55,4 +55,15 @@ router.put('/:id', (req,res) => {
     })
 })
 
+
+//Delet Exp
+router.delete('/:id', (req,res) => {
+   tripModel.deleteExp(req.params.id)
+    .then(resp => {
+        res.status(200).json(resp)
+    })
+    .catch(err => {
+        res.status(400).json( {errormessage: "error deleting check that Id exists",err})
+    })
+})
 module.exports = router;
