@@ -72,6 +72,19 @@ Both user and organizer login returns
 a Json message containing the message "User {username} Logged in"
 along with a token
 
+ ## Get all Organizers
+
+ | HTTP | Endpoint                |
+ | -----|------------------------ |
+ | Get  | /api/org/ |
+
+  ## Get all Users
+
+ | HTTP | Endpoint                |
+ | -----|------------------------ |
+ | Get  | /api/user/ |
+ 
+ 
   ## Get User information
 
  | HTTP | Endpoint                |
@@ -80,12 +93,7 @@ along with a token
  
  sending get request with the user id in url returns all of the information
 on that user
- ## Get all Experiences
-
-| HTTP | Endpoint                |
- | -----|------------------------ |
- | Get  | /api/exps |
-
+ 
  ## Post New Experience for an Organizer
 
 | HTTP | Endpoint                |
@@ -105,11 +113,12 @@ on that user
  | duration    | string (required)
  | title       | string (required)
 
+## Delete Exp by its Id
 
- ## Get all Experiences from a given Organizer
  | HTTP | Endpoint                |
  | -----|------------------------ |
- | GET  | api/exps/org/:id |
+ | DELETE  | api/exps/:id |
+  
 
  ## Update Exp by its Id
 
@@ -117,3 +126,15 @@ on that user
  | -----|------------------------ |
  | PUT  | api/exps/:id |
   send any updated values to this endpoint with id of exp
+  
+## Get all Experiences
+
+| HTTP | Endpoint                |
+ | -----|------------------------ |
+ | Get  | /api/exps |
+
+ ## Get all Experiences from a given Organizer
+ | HTTP | Endpoint                |
+ | -----|------------------------ |
+ | GET  | api/exps/org/:id |
+

@@ -6,10 +6,12 @@ module.exports = {
     findBy,
     getAllExps,
     getOrgsExps,
-    updateExp
+    updateExp,
+    deleteExp
 }
 
 async function add(exp,organizer_id){
+    console.log(exp)
     return db("experience")
     .insert({...exp, organizer_id})
 }
@@ -38,4 +40,10 @@ function updateExp(id,exp){
     return db('experience')
     .where('id',id)
     .update(exp)
+}
+async function deleteExp(id){
+    await db('experience')
+    .where('id',id)
+    .del()
+    return getAllExps()
 }

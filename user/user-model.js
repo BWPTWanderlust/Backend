@@ -5,7 +5,8 @@ module.exports = {
     add,
     findById,
     findBy,
-    getUserInfo
+    getUserInfo,
+    getAllUsers
 }
 
 async function add(user){
@@ -30,4 +31,8 @@ function getUserInfo(id){
     return db("users")
     .where({id})
     .first("id","username","name","email","bio",)
+}
+function getAllUsers(){
+    return db("users")
+    .select("id","username","name","email","bio",)
 }
