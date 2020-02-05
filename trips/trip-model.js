@@ -5,7 +5,8 @@ module.exports = {
     findById,
     findBy,
     getAllExps,
-    getOrgsExps
+    getOrgsExps,
+    updateExp
 }
 
 async function add(exp,organizer_id){
@@ -32,4 +33,9 @@ function getOrgsExps(id){
     return db('experience as e')
     .where('organizer_id',id)
 
+}
+function updateExp(id,exp){
+    return db('experience')
+    .where('id',id)
+    .update(exp)
 }

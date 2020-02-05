@@ -111,3 +111,9 @@ on that user
  | -----|------------------------ |
  | GET  | api/exps/org/:id |
 
+ ## Update Exp by its Id
+
+ | HTTP | Endpoint                |
+ | -----|------------------------ |
+ | PUT  | api/exps/:id |
+  send any updated values to this endpoint with id of exp

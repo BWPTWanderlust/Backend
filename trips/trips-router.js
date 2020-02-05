@@ -44,5 +44,15 @@ router.get('/org/:id/', (req, res) => {
     })
 })
 
+//Update exp
+router.put('/:id', (req,res) => {
+    tripModel.updateExp(req.params.id,req.body)
+    .then(response => {
+        res.status(200).json(response)
+    })
+    .catch(err => {
+        res.status(400).json({message:"an error occured updating check user id exists and you are sending data",err})
+    })
+})
 
 module.exports = router;
