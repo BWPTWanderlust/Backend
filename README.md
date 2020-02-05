@@ -104,3 +104,10 @@ on that user
  | imgurl      | string (optional)
  | duration    | string (required)
  | title       | string (required)
+
+
+ ## Get all Experiences from a given Organizer
+ | HTTP | Endpoint                |
+ | -----|------------------------ |
+ | GET  | api/exps/org/:id |
+
