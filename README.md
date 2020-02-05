@@ -21,6 +21,7 @@ Backend url
  | password    | string (required)        |
  | name        | string (required)        |
  | email       | string (optional)        |
+ | bio         | string (optional)        |
 
 
 ## Organizer Registration  
@@ -35,7 +36,7 @@ Backend url
  | password    | string (required)        |
  | name        | string (required)        |
  | email       | string (optional)        |
-
+ | bio         | string (optional)        |
 
  user and org registration both return  
  id of user/org  
@@ -49,7 +50,6 @@ Backend url
  | HTTP | Endpoint                |
  | -----|------------------------ |
  | POST | /api/auth/login/user    |
-
  | Fields      |          Data            |
  |-------------|------------------------- |
  | username    | unique string (required) |
@@ -62,7 +62,6 @@ Backend url
  | HTTP | Endpoint                |
  | -----|------------------------ |
  | POST | /api/auth/login/org |
-
  | Fields      |          Data            |
  |-------------|------------------------- |
  | username    | unique string (required) |
@@ -79,8 +78,8 @@ along with a token
  | -----|------------------------ |
  | Get  | /api/user/:id |
  
- sending get request with the user id in url returns all users information
-
+ sending get request with the user id in url returns all of the information
+on that user
  ## Get all Experiences
 
 | HTTP | Endpoint                |

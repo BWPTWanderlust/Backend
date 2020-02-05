@@ -10,7 +10,7 @@ router.get('/',(req,res) => {
     })
     .catch(err => {
         console.log(err)
-        res.status(500).json({
+        res.status(400).json({
             message: "There was an error getting user info"
         })
     })
@@ -26,7 +26,21 @@ router.post('/org/:id/', (req, res) => {
         res.status(201).json(response)
     })
     .catch( err => {
-        res.status(500).json(err)
+        res.status(400).json(err)
+    })
+})
+
+//Get all of Orgs Exp
+router.get('/org/:id/', (req, res) => {
+    const id = req.params.id
+
+    tripModel.getOrgsExps(req.params.id)
+    .then(response => {
+        console.log(response)
+        res.status(200).json(response)
+    })
+    .catch( err => {
+        res.status(400).json({message:"an error occured check organizer id is in url"})
     })
 })
 
