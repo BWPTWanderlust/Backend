@@ -13,7 +13,7 @@ exports.up = async function(knex) {
   await knex.schema.createTable("organizer", (org) => {
     org.increments("id")
     org.string("name",255).notNullable()
-    org.string("username",255).notNullable()
+    org.string("username",255).notNullable().unique()
     org.boolean("org").defaultTo(true)
     org.string("password",255).notNullable()
     org.string("email")

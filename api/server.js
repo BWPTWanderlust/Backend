@@ -18,7 +18,7 @@ server.use(cors())
 server.use(express.json())
 
 server.use('/api/authorized/user',auth, userAuthRouter)
-server.use('/api/authorized/exp',auth, tripAuthRouter)
+server.use('/api/authorized/exps',auth, tripAuthRouter)
 server.use('/api/authorized/org',auth, orgAuthRouter)
 
 server.use('/api/auth', authRouter)

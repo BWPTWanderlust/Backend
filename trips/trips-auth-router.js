@@ -19,10 +19,8 @@ router.get('/',(req,res) => {
 //addExp
 router.post('/org/:id/', (req, res) => {
     const id = req.params.id
-
     tripModel.add(req.body,id)
     .then(response => {
-        console.log(response)
         res.status(201).json(response)
     })
     .catch( err => {
@@ -36,7 +34,6 @@ router.get('/org/:id/', (req, res) => {
 
     tripModel.getOrgsExps(req.params.id)
     .then(response => {
-        console.log(response)
         res.status(200).json(response)
     })
     .catch( err => {

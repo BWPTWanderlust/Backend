@@ -11,7 +11,6 @@ module.exports = {
 }
 
 async function add(exp,organizer_id){
-    console.log(exp)
     return db("experience")
     .insert({...exp, organizer_id})
 }
