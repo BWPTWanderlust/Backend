@@ -25,7 +25,7 @@ router.post('/register/org', (req, res) => {
         res.status(201).json(response)
     })
     .catch( err => {
-        res.status(500).json(err)
+        res.status(400).json({err})
     })
 })
 //login org
@@ -57,6 +57,7 @@ router.post('/login/org', async (req,res,next) => {
       const {username,password} = req.body
       const user = await Users.findBy({username}).first()
       const passwordValid = await bcrypt.compare(password,user.password)
+      console.log(passwordValid)
       if( user && passwordValid) {
         const token = generateToken(user)
         res.status(200).json({

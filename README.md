@@ -14,7 +14,6 @@ Backend url
  | HTTP | Endpoint                |
  | -----|------------------------ |
  | POST | /api/auth/register/user |
-
  | Fields      |          Data            |
  |-------------|------------------------- |
  | username    | unique string (required) |
@@ -29,7 +28,6 @@ Backend url
  | HTTP | Endpoint                |
  | -----|------------------------ |
  | POST | /api/auth/register/org |
-
  | Fields      |          Data            |
  |-------------|------------------------- |
  | username    | unique string (required) |
@@ -74,23 +72,24 @@ along with a token
 
  ## Get all Organizers
 
- | HTTP | Endpoint                |
- | -----|------------------------ |
- | Get  | /api/org/ |
-
+ | HTTP | Endpoint                | Token Needed |
+ | -----|------------------------ | ---  |
+ | Get  | /api/org/               | no token |
+ | Get  | /api/authorized/org     | token  |
   ## Get all Users
 
- | HTTP | Endpoint                |
- | -----|------------------------ |
- | Get  | /api/user/ |
- 
+ | HTTP | Endpoint                | Token Needed |
+ | -----|------------------------ |  ---        |
+ | Get  | /api/user/              | no token |
+ | Get  | /api/authorized/user    | token |
  
   ## Get User information
 
- | HTTP | Endpoint                |
- | -----|------------------------ |
- | Get  | /api/user/:id |
- 
+ | HTTP | Endpoint                | Token Needed |
+ | -----|------------------------ |-----
+ | Get  | /api/user/:id           | no token  |
+ | Get  | /api/authorized/user/:id | token |
+
  sending get request with the user id in url returns all of the information
 on that user
  
@@ -99,6 +98,7 @@ on that user
 | HTTP | Endpoint                |
  | -----|------------------------ |
  | POST  | api/exps/org/:id |
+ | Post  | api/authorized/exps/org/:id |
  |-------|---------------------------------|
   | Fields      |          Data            |
  |-------------|------------------------- |
@@ -118,13 +118,14 @@ on that user
  | HTTP | Endpoint                |
  | -----|------------------------ |
  | DELETE  | api/exps/:id |
-  
+ | DELETE  | api/authorized/exps/:id | 
 
  ## Update Exp by its Id
 
  | HTTP | Endpoint                |
  | -----|------------------------ |
  | PUT  | api/exps/:id |
+ | PUT  | api/authorized/exps/:id
   send any updated values to this endpoint with id of exp
   
 ## Get all Experiences
@@ -132,9 +133,10 @@ on that user
 | HTTP | Endpoint                |
  | -----|------------------------ |
  | Get  | /api/exps |
+ | Get  | /api/authorized/exps
 
  ## Get all Experiences from a given Organizer
  | HTTP | Endpoint                |
  | -----|------------------------ |
  | GET  | api/exps/org/:id |
-
+ | GET  | api/authorized/exps/org/:id
