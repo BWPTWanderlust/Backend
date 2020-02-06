@@ -5,12 +5,12 @@ module.exports = {
     add,
     findById,
     findBy,
-    getAllOrgs
+    getAllOrgs,
+    getOrgInfo
 }
 
 async function add(org){
     org.password = await bcrypt.hash(org.password,14)
-    console.log(org)
     const [id] = await db("organizer")
     .insert(org)
     
@@ -30,4 +30,9 @@ function findBy(filter){
 function getAllOrgs(){
     return db("organizer")
     .select("id","username","name","email","bio",)
+}
+function getOrgInfo(id){
+    return db("organizer")
+    .where({id})
+    .first("id","username","name","email","bio",)
 }
