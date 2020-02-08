@@ -19,6 +19,7 @@ router.get('/',(req,res) => {
 //addExp
 router.post('/org/:id/', (req, res) => {
     const id = req.params.id
+    console.log(req.body)
     tripModel.add(req.body,id)
     .then(response => {
         res.status(201).json(response)
