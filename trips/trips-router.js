@@ -1,10 +1,12 @@
 const router = require('express').Router()
 const tripModel = require('./trip-model')
 
+
+//get exp by id
 router.get('/:id',(req,res) => {
     
     const id = req.params.id
-    tripModel.findById(id)
+    tripModel.getExpById(id)
     .then(exps => {
         res.status(200).json(exps)
     })
@@ -16,7 +18,7 @@ router.get('/:id',(req,res) => {
     })
 })
 
-
+//get all exps
 router.get('/',(req,res) => {
     console.log(req.params)
 
