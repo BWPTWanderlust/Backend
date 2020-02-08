@@ -92,7 +92,9 @@ along with a token
 
  sending get request with the user id in url returns all of the information
 on that user
- 
+
+ # Experiences Endpoints
+
  ## Post New Experience for an Organizer
 
 | HTTP | Endpoint                |
@@ -134,6 +136,13 @@ on that user
  | -----|------------------------ |
  | Get  | /api/exps |
  | Get  | /api/authorized/exps
+
+ ## Get an Experience by id
+
+| HTTP | Endpoint                |
+ | -----|------------------------ |
+ | Get  | /api/exps/:id |
+ 
 
  ## Get all Experiences from a given Organizer
  | HTTP | Endpoint                |
