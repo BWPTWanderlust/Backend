@@ -1,6 +1,22 @@
 const router = require('express').Router()
 const tripModel = require('./trip-model')
 
+router.get('/:id',(req,res) => {
+    
+    const id = req.params.id
+    tripModel.findById(id)
+    .then(exps => {
+        res.status(200).json(exps)
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(400).json({
+            message: "There was an error getting exp check id"
+        })
+    })
+})
+
+
 router.get('/',(req,res) => {
     console.log(req.params)
 
