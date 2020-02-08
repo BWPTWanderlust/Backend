@@ -16,9 +16,9 @@ async function add(exp,organizer_id){
 }
 
 async function findById(id){
-    return db("experience")
+    return db("experience as e")
     .where({id})
-    .first("id")
+   
 }
 function findBy(filter){
     return db("experience as e")
