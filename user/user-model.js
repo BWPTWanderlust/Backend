@@ -13,7 +13,6 @@ async function add(user){
     user.password = await bcrypt.hash(user.password,10)
     const [id] = await db("users")
     .insert(user)
-    console.log(id)
   return  findById(id)
 }
 
