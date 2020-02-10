@@ -69,7 +69,7 @@ router.put('/:id', (req,res) => {
         res.status(200).json(response)
     })
     .catch(err => {
-        res.status(400).json({message:"an error occured updating check user id exists and you are sending data",err})
+        res.status(400).json({message:"an error occured updating check user id exists and you are sending data, you sent",sent:req.body,err,})
     })
 })
 
